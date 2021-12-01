@@ -23,11 +23,6 @@ public class PlaceController {
         this.mapper = mapper;
     }
 
-    @GetMapping
-    public Page<PlaceResource> getAllPlacesByDestinationId(@PathVariable Long destinationId, Pageable pageable) {
-        return mapper.modelListToPage(placeService.getAllByDestinationId(destinationId), pageable);
-    }
-
     @PostMapping
     public PlaceResource createPlace(@PathVariable Long destinationId,
                                          @RequestBody CreatePlaceResource request) {
@@ -47,10 +42,4 @@ public class PlaceController {
         return mapper.toResource(placeService.getByIdAndDestinationId(destinationId, placeId));
     }
 
-
-    @DeleteMapping("{placeId}")
-    public ResponseEntity<?> deletePlace(@PathVariable Long destinationId,
-                                           @PathVariable Long placeId) {
-        return placeService.delete(destinationId, placeId);
-    }
 }

@@ -8,10 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface DestinationService {
-    List<Destination> getAll();
-    Page<Destination> getAll(Pageable pageable);
     Destination getById(Long destinationId);
     Destination create(Destination destination);
-    Destination update(Long destinationId, Destination request);
-    ResponseEntity<?> delete(Long destinationId);
+
 }

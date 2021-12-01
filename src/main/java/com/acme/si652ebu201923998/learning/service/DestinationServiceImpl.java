@@ -35,10 +35,6 @@ public class DestinationServiceImpl implements DestinationService {
         return destinationRepository.findAll();
     }
 
-    @Override
-    public Page<Destination> getAll(Pageable pageable) {
-        return destinationRepository.findAll(pageable);
-    }
 
     @Override
     public Destination getById(Long destinationId) {
@@ -55,27 +51,5 @@ public class DestinationServiceImpl implements DestinationService {
         return destinationRepository.save(request);
     }
 
-    @Override
-    public Destination update(Long destinationId, Destination request) {
 
-        Set<ConstraintViolation<Destination>> violations = validator.validate(request);
-        if (!violations.isEmpty())
-            throw new ResourceValidationException(ENTITY, violations);
-
-        return destinationRepository.findById(destinationId).map(destination ->
-                destinationRepository.save(
-                    destination.withName(request.getName())
-                        .withCity(request.getCity())
-                        .withCountry(request.getCountry()))
-                        .withPhotoUrl(request.getPhotoUrl())
-            ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, destinationId));
-    }
-
-    @Override
-    public ResponseEntity<?> delete(Long destinationId) {
-        return destinationRepository.findById(destinationId).map(destination -> {
-                destinationRepository.delete(destination);
-                return ResponseEntity.ok().build();
-            }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, destinationId));
-    }
 }

@@ -22,10 +22,7 @@ public class DestinationsController {
     @Autowired
     private DestinationMapper mapper;
 
-    @GetMapping
-    public Page<DestinationResource> getAllDestinations(Pageable pageable) {
-        return mapper.modelListToPage(destinationService.getAll(), pageable);
-    }
+
 
     @GetMapping("{destinationId}")
     public DestinationResource getDestinationById(@PathVariable("destinationId") Long destinationId) {
@@ -34,20 +31,7 @@ public class DestinationsController {
 
     @PostMapping
     public DestinationResource createDestination(@RequestBody CreateDestinationResource request) {
-
         return mapper.toResource(destinationService.create(mapper.toModel(request)));
     }
-
-    @PutMapping("{destinationId}")
-    public DestinationResource updateDestination(@PathVariable Long destinationId, @RequestBody UpdateDestinationResource request) {
-        return mapper.toResource(destinationService.update(destinationId, mapper.toModel(request)));
-    }
-
-    @DeleteMapping("{destinationId}")
-    public ResponseEntity<?> deleteDestination(@PathVariable Long destinationId) {
-        return destinationService.delete(destinationId);
-    }
-
-
 
 }

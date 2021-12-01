@@ -31,15 +31,7 @@ public class PlaceServiceImpl implements PlaceService {
     @Autowired
     private Validator validator;
 
-    @Override
-    public List<Place> getAllByDestinationId(Long destinationId) {
-        return placeRepository.findByDestinationId(destinationId);
-    }
 
-    @Override
-    public Page<Place> getAllByDestinationId(Long destinationId, Pageable pageable) {
-        return placeRepository.findByDestinationId(destinationId, pageable);
-    }
 
     @Override
     public Place create(Long destinationId, Place request) {
@@ -75,15 +67,7 @@ public class PlaceServiceImpl implements PlaceService {
 
     }
 
-    @Override
-    public ResponseEntity<?> delete(Long destinationId, Long placeId) {
 
-        return placeRepository.findByIdAndDestinationId(placeId, destinationId).map(place -> {
-                placeRepository.delete(place);
-                return ResponseEntity.ok().build();
-            }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, placeId));
-
-    }
 
     @Override
     public Place getByIdAndDestinationId(Long destinationId, Long placeId) {
