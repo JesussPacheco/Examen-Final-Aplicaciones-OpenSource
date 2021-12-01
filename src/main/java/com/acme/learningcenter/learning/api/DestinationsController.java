@@ -34,7 +34,7 @@ public class DestinationsController {
         return mapper.toResource(destinationService.getById(destinationId));
     }
 
-    @DestinationMapping
+    @PostMapping
     public DestinationResource createDestination(@RequestBody CreateDestinationResource request) {
 
         return mapper.toResource(destinationService.create(mapper.toModel(request)));

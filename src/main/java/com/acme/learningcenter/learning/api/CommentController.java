@@ -29,7 +29,7 @@ public class CommentController {
         return mapper.modelListToPage(commentService.getAllByDestinationId(destinationId), pageable);
     }
 
-    @DestinationMapping
+    @PostMapping
     public CommentResource createComment(@PathVariable Long destinationId,
                                          @RequestBody CreateCommentResource request) {
         return mapper.toResource(commentService.create(destinationId, mapper.toModel(request)));
