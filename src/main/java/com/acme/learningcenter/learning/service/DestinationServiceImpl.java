@@ -64,9 +64,10 @@ public class DestinationServiceImpl implements DestinationService {
 
         return destinationRepository.findById(destinationId).map(destination ->
                 destinationRepository.save(
-                    destination.withTitle(request.getTitle())
-                        .withDescription(request.getDescription())
-                        .withContent(request.getContent()))
+                    destination.withName(request.getName())
+                        .withCity(request.getCity())
+                        .withCountry(request.getCountry()))
+                        .withPhotoUrl(request.getPhotoUrl())
             ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, destinationId));
     }
 

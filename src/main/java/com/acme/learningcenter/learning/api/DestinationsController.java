@@ -1,5 +1,4 @@
 package com.acme.learningcenter.learning.api;
-
 import com.acme.learningcenter.learning.domain.service.DestinationService;
 import com.acme.learningcenter.learning.mapping.DestinationMapper;
 import com.acme.learningcenter.learning.resource.CreateDestinationResource;
@@ -11,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 
 @RestController

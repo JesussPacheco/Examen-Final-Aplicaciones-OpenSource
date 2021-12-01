@@ -11,14 +11,19 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 public class CreateDestinationResource {
-    @NotNull
+
     @Size(max = 100)
-    private String title;
+    private String name;
 
-    @NotNull
+
     @Size(max = 250)
-    private String description;
+    private String city;
 
-    @NotNull
-    private String content;
+    @Size(max = 250)
+    private String country;
+
+    @Size(max = 250)
+    private String photoUrl;
+
+
 }

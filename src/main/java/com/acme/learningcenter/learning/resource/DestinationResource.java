@@ -7,7 +7,10 @@ import lombok.Setter;
 @Setter
 public class DestinationResource {
     private Long id;
-    private String title;
-    private String description;
-    private String content;
+    private String name;
+    private String city;
+    private String country;
+    private String photoUrl;
+
+
 }

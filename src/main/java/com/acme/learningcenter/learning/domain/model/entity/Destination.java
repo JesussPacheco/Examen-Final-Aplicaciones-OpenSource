@@ -23,22 +23,24 @@ public class Destination extends AuditModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @NotBlank
+
     @Size(max = 100)
     @Column(unique = true)
-    private String title;
+    private String name;
 
-    @NotNull
-    @NotBlank
+
     @Size(max = 250)
-    private String description;
+    private String city;
 
-    @NotNull
-    @NotBlank
-    @Lob
-    @Type(type = "org.hibernate.type.TextType")
-    private String content;
+
+    @Size(max = 250)
+    private String country;
+
+
+
+    @Size(max = 250)
+    private String photoUrl;
+
 
     @OneToMany
     private List<Comment> comments;
