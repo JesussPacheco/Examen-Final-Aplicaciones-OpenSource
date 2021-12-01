@@ -9,10 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.acme</groupId>
-    <artifactId>LearningCenter</artifactId>
+    <artifactId>si652ebu201923998
+    </artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LearningCenter</name>
-    <description>LearningCenter</description>
+    <name>si652ebu201923998
+    </name>
+    <description>si652ebu201923998
+    </description>
     <properties>
         <java.version>15</java.version>
     </properties>
