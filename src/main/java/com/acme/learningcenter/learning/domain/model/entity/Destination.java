@@ -43,5 +43,5 @@ public class Destination extends AuditModel {
 
 
     @OneToMany
-    private List<Comment> comments;
+    private List<Place> places;
 }

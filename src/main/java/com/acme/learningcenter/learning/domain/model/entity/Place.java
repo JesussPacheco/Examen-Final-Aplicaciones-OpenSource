@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @With
-@Table(name = "comments")
-public class Comment extends AuditModel {
+@Table(name = "places")
+public class Place extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

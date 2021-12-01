@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class UpdateCommentResource {
+public class UpdatePlaceResource {
 
     private Long id;
 

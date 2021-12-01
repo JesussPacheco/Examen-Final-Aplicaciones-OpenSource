@@ -11,8 +11,8 @@ public class MappingConfiguration {
     }
 
     @Bean
-    public CommentMapper commentMapper() {
-        return new CommentMapper();
+    public PlaceMapper placeMapper() {
+        return new PlaceMapper();
     }
 
 }
