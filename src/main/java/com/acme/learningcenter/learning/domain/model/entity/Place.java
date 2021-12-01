@@ -9,6 +9,7 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -22,11 +23,17 @@ public class Place extends AuditModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @NotBlank
-    @Lob
-    @Type(type = "org.hibernate.type.TextType")
-    private String text;
+    @Size(max = 250)
+    private String name;
+
+
+    private Long altitude ;
+
+    private Long latitude;
+
+    private Long longitude;
+
+    private String heritage ;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "destination_id", nullable = false)

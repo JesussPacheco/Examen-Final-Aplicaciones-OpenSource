@@ -66,7 +66,11 @@ public class PlaceServiceImpl implements PlaceService {
             throw new ResourceNotFoundException("Destination", destinationId);
 
         return placeRepository.findById(placeId).map(place ->
-                placeRepository.save(place.withText(request.getText()))
+                placeRepository.save(place.withName(request.getName()))
+                        .withAltitude(request.getAltitude())
+                        .withLatitude(request.getLatitude())
+                        .withLongitude(request.getLongitude())
+                        .withHeritage(request.getHeritage())
            ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, placeId));
 
     }
